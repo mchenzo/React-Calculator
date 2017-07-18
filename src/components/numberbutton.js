@@ -5,7 +5,7 @@ import {inject, observer} from 'mobx-react';
 class NumberButton extends Component{
 	render(){
 		return(
-			<button className={this.props.class}
+			<button id={this.props.idName}
 					onClick={() => this.props.store.handleNumberClick(this.props.number)}
 					>{this.props.number}</button>
 		)

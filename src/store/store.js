@@ -26,7 +26,6 @@ class CalcStore{
 		 	this.expression = ''
 		} else if (op === '+/-'){
 			this.currentExpression*=-1
-		 	this.needsToClear = true
 		} else if (op === '÷'){
 			this.expression += '/'
 			this.needsToClear = true
@@ -41,8 +40,12 @@ class CalcStore{
 			this.clear()
 			this.needsToClear = false
 		}
-		if (this.currentExpression) {
-			this.currentExpression += number
+		if(number === '.'){
+			if(this.currentExpression.indexOf('.') === -1){
+				this.currentExpression+='.'
+			}
+		} else if(this.currentExpression) {
+			this.currentExpression+=number
 		} else {
 			this.currentExpression = number
 		}

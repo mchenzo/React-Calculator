@@ -1,0 +1,15 @@
+import React, {Component} from 'react';
+import {inject, observer} from 'mobx-react';
+
+@inject('store') @observer
+class NumberButton extends Component{
+	render(){
+		return(
+			<button className={this.props.class}
+					onClick={() => this.props.store.handleNumberClick(this.props.number)}
+					>{this.props.number}</button>
+		)
+	}
+}
+
+export default NumberButton
